@@ -1,0 +1,72 @@
+---
+import { Icon } from 'astro-icon/components'
+
+const socials = [
+  {
+    icon: 'logos:discord-icon',
+    link: 'https://discord.gg/Hg7cUDzvwu',
+  },
+  {
+    icon: 'devicon:google',
+    link: 'https://www.google.co.th/search?q=pycon+thailand',
+  },
+  {
+    icon: 'logos:messenger',
+    link: 'http://m.me/PyConThailand',
+  },
+  {
+    icon: 'ri:line-fill',
+    link: '',
+    color: '#00b900',
+  },
+  {
+    icon: 'logos:twitter',
+    link: 'https://twitter.com/pyconthailand',
+  },
+  {
+    icon: 'mdi:github',
+    link: '',
+  },
+  {
+    icon: 'logos:microsoft-teams',
+    link: '',
+  },
+  {
+    icon: 'logos:facebook',
+    link: 'https://www.facebook.com/PyConThailand',
+  },
+]
+---
+
+<footer
+  class='flex items-center justify-between relative bg-slate-100 sm:px-8 md:px-16 lg:px-16 pt-4 pb-32 overflow-clip'
+>
+  <div class='flex-shrink p-4'>
+    <img src='/images/common/pyconth2023_logo.svg' class='h-12' alt='Pycon Logo' />
+  </div>
+
+  <div class='max-sm:flex-col md:flex'>
+    <div class='text-gray-400 text-center font-semibold px-4'>© 2023. PyCon Thailand. All rights reserved.</div>
+    <div class='md:flex flex gap-x-4 px-4 max-md:mt-4'>
+      {
+        socials
+          .filter(social => social.link !== '')
+          .map((social, index) => (
+            <a href={social.link} target='_blank'>
+              <Icon name={social.icon} color={social.color} width={24} height={24} />
+            </a>
+          ))
+      }
+    </div>
+  </div>
+
+  <div
+    class='group text-center absolute w-full left-0 bottom-0 translate-y-8 hover:translate-y-0 hover:opacity-100 transition-all cursor-pointer'
+  >
+    <span class='text-6xl opacity-25 group-hover:hidden'>🐍</span>
+    <a href='https://youtu.be/kMwodsPwrSQ?t=8' class='text-6xl group-hover:block group-hover:animate-bounce hidden'>
+      🐘
+    </a>
+  </div>
+</footer>
+<style></style>
