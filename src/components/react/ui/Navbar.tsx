@@ -1,8 +1,5 @@
 import { useState } from 'react'
-import { Icon } from 'astro-iconify'
-
-import { navigate } from 'astro:transitions/client';
-
+import { Icon } from '@iconify/react'
 
 type MenuType = {
   name: string
@@ -19,10 +16,6 @@ const menus: MenuType[] = [
         name: 'Code of conduct',
         link: '/conduct',
       },
-      // {
-      //   name: 'Past PyCon',
-      //   link: '/past-pycon',
-      // },
     ],
   },
   {
@@ -45,13 +38,6 @@ const menus: MenuType[] = [
     name: 'Speakers',
     hrefLink: '/speakers',
   },
-
-  // {
-  //   name: 'News',
-  // },
-  // {
-  //   name: 'Contact',
-  // },
   {
     name: 'Previous',
     subMenu: [
@@ -72,7 +58,7 @@ const menus: MenuType[] = [
 ]
 
 // Navbar component with good accessibility
-const Navbar = () => {
+const Navbar = (navigate) => {
   const [openMobileNav, setOpenMobileNav] = useState(false)
   const toggleOpenMobileNav = () => setOpenMobileNav(cur => !cur)
 
