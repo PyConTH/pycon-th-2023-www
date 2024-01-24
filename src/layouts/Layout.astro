@@ -1,4 +1,6 @@
 ---
+import { navigate } from 'astro:transitions/client';
+
 import Navbar from "src/components/react/ui/Navbar";
 import Footer from "../components/Footer.astro";
 import CookieConsentBanner from "../components/react/misc/CookieConsentBanner";
@@ -24,7 +26,7 @@ const { title } = Astro.props;
 	<div class="h-screen">
         <div class="bg-white flex flex-col h-full container mx-auto relative">
           <!-- {!props.hideNavbar && <Navbar />} -->
-          <Navbar />
+          <Navbar navigate={navigate} client:load />
           <div class='flex-1 flex'><slot /></div>
           <div class="mt-4">
             <Footer />
