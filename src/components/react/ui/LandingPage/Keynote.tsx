@@ -149,12 +149,12 @@ const KeynoteSpeaker = ({
           ></p>
 
           {!isShowFullContent && (
-            <a className="bg-black/5 backdrop-blur-md hover:bg-black/25 group-hover:bg-black/25 border-gray-400 border rounded-b-md text-slate-500 absolute bottom-0 left-0 w-full flex justify-center items-center cursor-pointer">
+            <button role="button" aria-label="Expand" className="bg-black/5 backdrop-blur-md hover:bg-black/25 group-hover:bg-black/25 border-gray-400 border rounded-b-md text-slate-500 absolute bottom-0 left-0 w-full flex justify-center items-center cursor-pointer">
               <span className="hidden" aria-hidden="true">
                 Read more speaker description
               </span>
               <Icon icon="mingcute:down-fill" className="" />
-            </a>
+            </button>
           )}
         </div>
       </div>
