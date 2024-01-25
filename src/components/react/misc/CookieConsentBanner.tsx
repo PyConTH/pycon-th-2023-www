@@ -34,7 +34,7 @@ export default function CookieConsentBanner() {
       {/* Cookie Consent */}
 
       {/* TODO: Fix this */}
-      {/* <CookieConsent
+      <CookieConsent
         location='bottom'
         buttonText='Accept'
         cookieName='pyconth'
@@ -52,7 +52,7 @@ export default function CookieConsentBanner() {
             Click here to learn more
           </div>
         </span>
-      </CookieConsent> */}
+      </CookieConsent>
 
       {/* Cookie modal */}
       <dialog id='my_modal_2' ref={modalRef} className='modal'>
