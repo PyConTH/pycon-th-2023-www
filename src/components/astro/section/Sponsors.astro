@@ -14,17 +14,17 @@ const pyLadis = 'https://ik.imagekit.io/p9bsqmrho/sponsors/PyLadiesBangkok.png'
 const skooldio = 'https://ik.imagekit.io/p9bsqmrho/sponsors/Skooldio.png'
 const sparkTech = 'https://ik.imagekit.io/p9bsqmrho/sponsors/SparkTechThailand.png'
 
-const communities = [
-    bigDataPRG,
-    bornToDev,
-    codesanook,
-    creatorsgarten,
-    dataTH,
-    milsBlog,
-    openSourceEdu,
-    pyLadis,
-    skooldio,
-    sparkTech,
+const communities: {imgUrl: string, alt: string }[] = [
+    { imgUrl: bigDataPRG, alt: 'bigDataPRG' },
+    { imgUrl: bornToDev, alt: 'bornToDev' },
+    { imgUrl: codesanook, alt: 'codesanook' },
+    { imgUrl: creatorsgarten, alt: 'creatorsgarten' },
+    { imgUrl: dataTH, alt: 'dataTH' },
+    { imgUrl: milsBlog, alt: 'milsBlog' },
+    { imgUrl: openSourceEdu, alt: 'openSourceEdu' },
+    { imgUrl: pyLadis, alt: 'pyLadis' },
+    { imgUrl: skooldio, alt: 'skooldio' },
+    { imgUrl: sparkTech, alt: 'sparkTech' },
   ]
 ---
 
@@ -127,7 +127,7 @@ const communities = [
     {communities.map(item => (
       <div class='card w-32 h-32 justify-center shadow-xl bg-white my-4'>
         <figure class='p-5'>
-          <img src={item} class='items-center' />
+          <img src={item.imgUrl} class='items-center' alt={item.alt}/>
         </figure>
       </div>
     ))}
