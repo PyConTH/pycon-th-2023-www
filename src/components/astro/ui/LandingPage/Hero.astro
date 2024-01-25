@@ -1,0 +1,37 @@
+---
+import AnimatedHeadLine from '@components/react/ui/LandingPage/AnimatedHeadLine'
+import AnimatedHeroSvgBottom from '@components/react/ui/LandingPage/AnimatedHeroSvg/AnimatedHeroSvgBottom'
+import AnimatedHeroSvgSideStar from '@components/react/ui/LandingPage/AnimatedHeroSvg/AnimatedHeroSvgSideStar'
+import AnimatedHeroSvgSideTukTuk from '@components/react/ui/LandingPage/AnimatedHeroSvg/AnimatedHeroSvgSideTukTuk'
+---
+
+<div class='grid grid-cols-1 md:grid-cols-5 min-h-[40vh]'>
+  <div class='md:col-span-4 col-span-full relative flex flex-col justify-between'>
+    <div class='lg:pl-16 px-4 h-full flex flex-col justify-center'>
+      <div class='flex flex-wrap flex-col pb-2'>
+        <AnimatedHeadLine client:only />
+      </div>
+      <div>
+        <div class='text-2xl text-black'>
+          <div class='flex flex-col'>
+            <div class='leading-relaxed'>Discover the Magic of Python in</div>
+            <div class=''>the Land of Smiles :)</div>
+          </div>
+        </div>
+        <div class='flex flex-col items-start mt-4'>
+          <div class='flex bg-header-orange text-white font-bold text-xl uppercase rounded-lg px-4 py-2'>
+            See you again sometime in Q1/2025
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='justify-self-end'>
+      <AnimatedHeroSvgBottom client:idle />
+    </div>
+  </div>
+
+  <div class='md:col-span-1 md:flex flex-col justify-end hidden'>
+    <AnimatedHeroSvgSideTukTuk client:idle/>
+    <AnimatedHeroSvgSideStar client:idle/>
+  </div>
+</div>
