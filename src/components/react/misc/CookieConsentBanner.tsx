@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+
 import CookieConsent from 'react-cookie-consent'
 
 export default function CookieConsentBanner() {
