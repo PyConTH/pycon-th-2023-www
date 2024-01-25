@@ -4,6 +4,7 @@ import CookieConsent from 'react-cookie-consent'
 
 export default function CookieConsentBanner() {
   const [showModal, setShowModal] = useState(false)
+  const [isLoad, setIsLoad] = useState(false)
   const modalRef = useRef<HTMLDialogElement | null>(null)
 
   const closeModal = () => {
@@ -25,6 +26,10 @@ export default function CookieConsentBanner() {
   }
 
   useEffect(() => {
+    setIsLoad(true)
+  }, [])
+
+  useEffect(() => {
     if (showModal && modalRef.current) {
       modalRef.current.showModal()
     }
@@ -35,25 +40,29 @@ export default function CookieConsentBanner() {
       {/* Cookie Consent */}
 
       {/* TODO: Fix this */}
-      <CookieConsent
-        location='bottom'
-        buttonText='Accept'
-        cookieName='pyconth'
-        disableStyles
-        expires={150}
-        containerClasses={`md:w-3/4 w-10/12 fixed flex justify-between gap-x-2 left-1/2 -translate-x-1/2 mb-4 px-4 py-4 bg-slate-300/50 backdrop-blur-md rounded`}
-        buttonWrapperClasses={`flex flex-col justify-center`}
-        buttonClasses={`bg-slate-500 hover:bg-slate-700 text-white px-8 py-2 rounded`}
-        contentClasses={`flex items-center`}
-        onAccept={onCookieConsentAccept}
-      >
-        <span className='mr-2'>
-          <span className='mr-2'>🍪</span>This website uses cookies to enhance the user experience.
-          <div className='cursor-pointer lg:ml-6 text-primary' onClick={() => setShowModal(true)}>
-            Click here to learn more
-          </div>
-        </span>
-      </CookieConsent>
+      {
+        isLoad && (
+          <CookieConsent
+            location='bottom'
+            buttonText='Accept'
+            cookieName='pyconth'
+            disableStyles
+            expires={150}
+            containerClasses={`md:w-3/4 w-10/12 fixed flex justify-between gap-x-2 left-1/2 -translate-x-1/2 mb-4 px-4 py-4 bg-slate-300/50 backdrop-blur-md rounded`}
+            buttonWrapperClasses={`flex flex-col justify-center`}
+            buttonClasses={`bg-slate-500 hover:bg-slate-700 text-white px-8 py-2 rounded`}
+            contentClasses={`flex items-center`}
+            onAccept={onCookieConsentAccept}
+          >
+            <span className='mr-2'>
+              <span className='mr-2'>🍪</span>This website uses cookies to enhance the user experience.
+              <div className='cursor-pointer lg:ml-6 text-primary' onClick={() => setShowModal(true)}>
+                Click here to learn more
+              </div>
+            </span>
+          </CookieConsent>
+        )
+      }
 
       {/* Cookie modal */}
       <dialog id='my_modal_2' ref={modalRef} className='modal'>
