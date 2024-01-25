@@ -68,8 +68,8 @@ export default function CookieConsentBanner() {
       <dialog id='my_modal_2' ref={modalRef} className='modal'>
         <form method='dialog' className='modal-box bg-slate-50'>
           <div>
-            <h3 className='font-bold text-lg'>บริษัท บางกอก ดอท อาร์บี</h3>
-            <h3 className='font-bold text-lg'>BANGKOK DOT RB CO., LTD.</h3>
+            <p className='font-bold text-lg'>บริษัท บางกอก ดอท อาร์บี</p>
+            <p className='font-bold text-lg'>BANGKOK DOT RB CO., LTD.</p>
 
             {/* Close Button */}
             <button className='btn btn-sm btn-circle btn-ghost absolute right-2 top-2'>✕</button>
@@ -79,11 +79,11 @@ export default function CookieConsentBanner() {
 
           <div>
             <div className='py-2'>
-              <h5 className='font-bold text-lg'>นโยบายความเป็นส่วนตัวสำหรับลูกค้า</h5>
+              <h3 className='font-bold text-lg'>นโยบายความเป็นส่วนตัวสำหรับลูกค้า</h3>
 
               <div className='px-2 grid gap-y-2'>
                 <div>
-                  <h6 className='font-bold'>การเก็บรวบรวมข้อมูลส่วนบุคคล</h6>
+                  <h3 className='font-bold'>การเก็บรวบรวมข้อมูลส่วนบุคคล</h3>
                   <p>
                     เราจะเก็บข้อมูลส่วนบุคคลที่ได้รับผ่าน Google Analytics
                     โดยใช้ข้อมูลจากคุกกี้ที่ได้รับจากผู้ใช้งานที่เข้ามาในเว็บไซต์
@@ -91,7 +91,7 @@ export default function CookieConsentBanner() {
                 </div>
 
                 <div>
-                  <h6 className='font-bold'>ประเภทข้อมูลของผู้ใช้งาน</h6>
+                  <h3 className='font-bold'>ประเภทข้อมูลของผู้ใช้งาน</h3>
                   <p>ประเทศที่อยู่ เมืองที่อยู่ เพศ อายุ ภาษา ความสนใจ</p>
                   <p>ข้อมูลอ่อนไหวที่จัดเก็บ: เพศ อายุ</p>
                 </div>
@@ -102,7 +102,7 @@ export default function CookieConsentBanner() {
                 </div>
 
                 <div>
-                  <h6 className='font-bold'>การโฆษณาและการตลาด</h6>
+                  <h3 className='font-bold'>การโฆษณาและการตลาด</h3>
                   <ul className='list-disc pl-6'>
                     <li>มีการรวบรวมข้อมูลผู้ใช้เพื่อวิเคราะห์และทำการตลาด</li>
                     <li>ไม่มีการแสดงโฆษณาจากบุคคลที่สาม</li>
