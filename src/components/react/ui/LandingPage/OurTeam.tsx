@@ -78,11 +78,13 @@ const TeamList = ({ team, color }: { team: Teams; color: string }) => {
     <div>
       <div className="flex flex-wrap justify-start">
         <div className="max-sm:w-20 sm:w-40 md:w-48 lg:w-64" style={{ color }}>
-          <img
-            src={team.image}
-            className="max-sm:w-20 max-sm:h-20 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-64 lg:h-64"
-            alt={team.name}
-          />
+          <div className="max-sm:w-20 max-sm:h-20 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-64 lg:h-64">
+            <img
+              src={team.image}
+              className="h-full"
+              alt={team.name}
+            />
+          </div>
           <div className="py-4">
             <p className="text-xl max-md:text-base max-sm:text-sm font-semibold">
               {team.name}
