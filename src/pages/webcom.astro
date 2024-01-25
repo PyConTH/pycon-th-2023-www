@@ -10,7 +10,7 @@
     <counter-element></counter-element>
     <counter-element></counter-element>
 
-    <script>
+    <script is:inline>
         const openMobileNav = false
         let count = 0
 
@@ -71,6 +71,9 @@
 
       // Define the CounterElement class
       class CounterElement extends HTMLElement {
+incrementButton: any
+decrementButton: any
+countSpan: HTMLSpanElement
         constructor() {
           super()
           this.attachShadow({ mode: 'open' })
@@ -94,7 +97,7 @@
 
           // Update the displayed count when shared state changes
           const updateCount = () => {
-            this.countSpan.textContent = sharedState.counterValue
+            this.countSpan.textContent = sharedState.counterValue.toString()
           }
 
           // Listen for changes in shared state

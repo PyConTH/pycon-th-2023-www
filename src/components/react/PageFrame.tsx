@@ -1,7 +1,7 @@
 import { lazy, useEffect, useRef } from 'react'
 import '../index.scss'
 import CookieConsentBanner from './misc/CookieConsentBanner'
-import Footer from './ui/Footer'
+// import Footer from './ui/Footer'
 
 const Navbar = lazy(() => import('./ui/Navbar'))
 
@@ -43,7 +43,7 @@ const PageFrame = (props: IProps) => {
 
           <div className='flex-1 flex'>{props.children}</div>
           <div className="mt-4">
-            <Footer />
+            {/* <Footer /> */}
           </div>
           <CookieConsentBanner />
         </div>
