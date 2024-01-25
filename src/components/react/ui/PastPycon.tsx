@@ -1,4 +1,4 @@
-import { Icon } from 'astro-iconify'
+import { Icon } from '@iconify/react'
 
 const options = [
   {

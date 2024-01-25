@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import { Icon } from 'astro-iconify'
+import { Icon } from '@iconify/react'
 import Highlight from 'react-highlight'
 import 'highlight.js/styles/github.css'
 

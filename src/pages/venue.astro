@@ -1,0 +1,386 @@
+---
+import { Icon } from 'astro-icon/components'
+import Layout from '@/layouts/Layout.astro'
+
+const bangkokURL =
+    'https://a.cdn-hotels.com/gdcs/production22/d1769/8f94419d-5e5a-44c5-82fc-fc26eb1a9767.jpg?impolicy=fcrop&w=800&h=533&q=medium'
+  const avaniURL = 'https://ak-d.tripcdn.com/images/1mi582234acf28vhs1736.jpg?proc=source/trip'
+  const venuemapURL = `https://www.google.com/maps/d/u/0/embed?mid=1F19ofRc39I04Z9zexW91goEBM0x9XZU&ehbc=2E312F&noprof=1`
+  const mrtbtsURL = 'https://travelhappy.info/wp-content/uploads/2021/01/Bangkok-BTS-MRT-Map-2021.png'
+  const btsexitURL =
+    'https://1.bp.blogspot.com/-nDdV-Ddij_4/YAWZqwzPl7I/AAAAAAAFI-A/KFd97ZoN0ioPMK8gVJcUL7xlpLH5s-ylgCLcBGAsYHQ/s800/20210113_104722.jpg'
+  const directionURL = 'https://maps.app.goo.gl/tWZ7VpbXEoFXcQWk8'
+  const grabAndroidURL = 'https://play.google.com/store/apps/details?id=com.grabtaxi.passenger&hl=en&gl=US'
+  const grabIosURL = 'https://apps.apple.com/sg/app/grab-taxi-food-delivery/id647268330'
+  const bkkRailAndroid = 'https://play.google.com/store/search?q=bkk+rail&c=apps'
+  const bkkRailiOS = 'https://apps.apple.com/sg/app/bkk-rail/id1448681649'
+  const arlticketURL =
+    'https://theexclusivetransfer.com/wp-content/uploads/2023/09/people-at-the-airport-rail-link-station.webp'
+  const dmksignURL =
+    'https://photos.smugmug.com/Asia/Thailand/Bangkok-Don-Muang-Airport/i-S8SmHd5/0/934af571/L/20230302_131617-to-srt-red-line-L.jpg'
+  const dmkwayURL =
+    'https://photos.smugmug.com/Asia/Thailand/Bangkok-Don-Muang-Airport/i-cBm9gHB/0/1c991736/L/20230302_131748-walkway-to-station-L.jpg'
+  const dmkcommuURL =
+    'https://photos.smugmug.com/Future-Southeast-Asia/Thailand/Bangkok-Transport/i-Rf5bfS8/0/c2614bcb/L/20230302_124719-don-muang-commuter-and-long-distance-L.jpg'
+  const dmkdarkredURL = 'https://pmk.co.th/wp-content/uploads/2022/12/Untitled-3-1.jpg'
+  const androidDownloadButton = '/images/en_badge_web_generic.png'
+  const iOSDownloadBadge = '/images/download-on-the-app-store-badge.png'
+  const microsoftImg = '/images/microsoft.jpg'
+  const avaniFloorPan = '/images/avaniFloorPan.png'
+  const microsoftFloorPlan = '/images/microsoftFloorPlan.png'
+  const btsMicrosoft = '/images/btsMicrosoft.png'
+  const shuttleBus = '/images/shuttleBus.png'
+  const btsToAvani = '/images/btsToAvani.png'
+---
+<Layout title="PyCon TH 2023 - Venue">
+  <div class='px-6 md:px-16 flex flex-col mx-auto w-full'>
+  <ul class='menu menu-horizontal sticky top-0 bg-white w-full justify-center'>
+      <li>
+          <details>
+              <summary class='w-[250px]'>Venue</summary>
+              <ul class='bg-white venue-menu z-10'>
+                  <li>
+                  <a href='#bangkok'>
+                      <Icon name='solar:city-bold' />
+                      Bangkok
+                  </a>
+                  </li>
+                  <li>
+                  <a href='#avani'>
+                      <Icon name='mdi:location' />
+                      Avani Sukhumvit
+                  </a>
+                  <ul class='sub-menu'>
+                      <li>
+                      <a href='#pyconmap'>
+                          <Icon name='material-symbols:map-outline' />
+                          Map - Avani
+                      </a>
+                      </li>
+                  </ul>
+                  </li>
+                  <li>
+                  <a href='#microsoft'>
+                      <Icon name='mdi:location' />
+                      Microsoft Thailand
+                  </a>
+                  <ul class='sub-menu'>
+                      <li>
+                      <a href='#microsoftmap'>
+                          <Icon name='material-symbols:map-outline' />
+                          Map - Microsoft
+                      </a>
+                      </li>
+                  </ul>
+                  </li>
+              </ul>
+          </details>
+      </li>
+      <li>
+      <details>
+          <summary class='pb-0 w-[240px]'>Transportation</summary>
+          <ul class='bg-white venue-menu'>
+              <li>
+                  <a href='#toAvani'><Icon name="mdi:location" />Getting to Avani</a>
+                  <ul class='sub-menu'>
+                      <li>
+                          <a href='#btsAvani'><Icon name="material-symbols:train-outline" />BTS Skytrain</a>
+                      </li>
+                      <li>
+                          <a href='#mrtAvani'><Icon name="material-symbols:subway-outline" />MRT Subway</a>
+                      </li>
+                      <li>
+                          <a href='#parkingAvani'><Icon name="mdi:car-outline" />Driving and Parking</a>
+                      </li>
+                      <li>
+                          <a href='#grabAvani'><Icon name="simple-icons:grab" />Grab (Uber)</a>
+                      </li>
+                      <li>
+                          <a href='#airportAvani'><Icon name="uil:plane-fly" />Airport</a>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <a href='#toMicrosoft'><Icon name="mdi:location" />Getting to Microsoft</a>
+                  <ul class='sub-menu'>
+                      <li>
+                          <a href='#btsMicrosoft'><Icon name="material-symbols:train-outline" />BTS Skytrain</a>
+                      </li>
+                      <li>
+                          <a href='#parkingMicrosoft'><Icon name="mdi:car-outline" />Driving and Parking</a>
+                      </li>
+                      <li>
+                          <a href='#grabMicrosoft'><Icon name="simple-icons:grab" />Grab (Uber)</a>
+                      </li>
+                  </ul>
+              </li>
+          </ul>
+      </details>
+      </li>
+  </ul>
+  <div id='venue'>
+      <div class='flex mb-4'>
+          <h1 class='bg-header-orange text-white font-bold uppercase lg:text-4xl text-2xl px-2 py-2'> Venue </h1>
+      </div>
+      <h2 id='bangkok' class='font-bold text-lg text-primary scroll-mt-14'>
+      Bangkok
+      </h2>
+      <p class='mb-4'>
+      Bangkok is the capital of Thailand and one of the most popular tourist destinations in Southeast Asia. It is a
+      city of contrasts, with the coexistence of temples and modern skyscrapers. Bangkok is also known for its
+      vibrant street food scene and friendly people.
+      </p>
+      <img src={bangkokURL} class='place-content-center md:w-1/2 h-auto mx-auto mb-4 mt-4'></img>
+      <h2 id='avani' class='font-bold text-lg text-primary scroll-mt-14'>
+      Avani Sukhumvit
+      </h2>
+      <p>
+      Our conference event on the 7th floor of Avani Sukhumvit, the first upscale 5-star hotel in the area. Enjoy stylish rooms with city skyline views, complemented by cutting-edge tech features in a top-tier event venue.
+      Located at 2089 Sukhumvit Road, Phra Khanong Nuea, Watthana, Bangkok 10260, Thailand.
+      </p>
+      <img src={avaniURL} class='place-content-center md:w-1/2 h-auto mx-auto mb-4 mt-4'></img>
+      <img src={avaniFloorPan} class='place-content-center md:w-1/2 h-auto mx-auto mb-4 mt-4'></img>
+      <div id='pyconmap' class='mb-8 mt-8 scroll-mt-14'>
+          <div class='flex justify-center'>
+              <iframe
+                  src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.2179746118977!2d100.59906201124203!3d13.705244086626234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29f5881f210f9%3A0xe614ba9d6cbc85b2!2sAvani%20Sukhumvit%20Bangkok!5e0!3m2!1sen!2sth!4v1699348120687!5m2!1sen!2sth'
+                  width='640'
+                  height='480'
+                  loading='lazy'
+              ></iframe>
+          </div>
+      </div>
+      <h2 id='microsoft' class='font-bold text-lg text-primary scroll-mt-14'>
+      Microsoft Thailand
+      </h2>
+      <p>An enriching workshop session on the 38th floor of CRC Tower, All Seasons Place, located at 87/2 Wireless Road, Lumpini, Pathumwan, Bangkok 10330, Thailand.
+      Upon arrival, please present your valid ID card at the lobby for registration before proceeding to the 38th floor. </p>
+      <img src={microsoftImg} class='place-content-center md:w-1/2 h-auto mx-auto mb-4 mt-4'></img>
+      <img src={microsoftFloorPlan} class='place-content-center md:w-1/2 h-auto mx-auto mb-4 mt-4'></img>
+      <div id='microsoftmap' class='mb-8 mt-8 scroll-mt-14'>
+          <div class='flex justify-center'>
+          <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.658573126129!2d100.54536157497941!3d13.739109197587416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29edeea4242f9%3A0x3884b66371c14b49!2sMicrosoft%20(Thailand)!5e0!3m2!1sen!2sth!4v1702443535285!5m2!1sen!2sth"
+              width="600"
+              height="450"
+              loading="lazy"
+          ></iframe>
+          </div>
+      </div>
+  </div>
+  <div id='transportation'>
+      <div class='flex mb-3 mt-5'>
+          <h2 class='bg-header-orange text-white font-bold uppercase lg:text-4xl text-2xl px-2 py-2'>
+              Transportation
+          </h2>
+      </div>
+      <div id='toAvani' class='mt-4 mb-4 space-y-2 scroll-mt-14'>
+          <p class='font-bold text-lg mb-2 text-primary'>Getting to Avani Sukhumvit</p>
+      </div>
+      <p class='flex mb-3'>
+      There are several transportation options available in Bangkok. We recommend the following five methods of
+      travel which are known for being fast, easy, and safe for traveling in Bangkok. We generally do not recommend
+      traveling by car or bus as traffic in Bangkok is unpredicatble.
+      </p>
+      <div id='btsAvani' class='mt-4 mb-4 space-y-2 scroll-mt-14'>
+          <h3 class='font-bold text-md mb-2 text-primary'> BTS Skytrain </h3>
+          <p>Taking BTS Skytrain is the fastest and easiest way to get to the venue.</p>
+          <p>
+              Avani Sukhumvit is directly connected to the BTS Skytrain the Sukhumvit Line (Green Line) On-nut Station via
+              Exit 3. To get to the venue from the station, you can follow these steps:
+          </p>
+          <ul class='list-decimal list-inside mb-4 mt-4 space-y-4'>
+              <li>
+              Take MTR Subway the Sukhumvit Line (Blue Line) to Sukhumvit Station, which is connected to the BTS
+              Skytrain at Asok Station.
+              </li>
+              <li>Transfer to the BTS Skytrain and take it to On Nut Station.</li>
+              <li>Exit the station at Exit 3 and follow the signs to Avani Sukhumvit Bangkok.</li>
+          </ul>
+          <img src={btsToAvani} class='place-content-center md:w-1/2 h-auto mx-auto mt-4 mb-4'></img>
+      </div>
+      <div id='mrtAvani' class='mt-4 mb-4 space-y-2 scroll-mt-14'>
+          <h3 class='font-bold text-md text-primary'> MRT Subway </h3>
+          <p>To get to Avani Sukhumvit Bangkok by MRT, you can follow these steps: </p>
+          <ul class='list-decimal list-inside mt-2 space-y-2'>
+              <li>
+              Take MTR Subway the Sukhumvit Line (Blue Line) to Sukhumvit Station, which is connected to the BTS
+              Skytrain at Asok Station. The map below illustrates how the stations are connected, which can help you
+              navigate the transportation system more easily.
+              </li>
+              <img src={mrtbtsURL} class='place-content-center md:w-1/2 h-auto mx-auto mt-4 mb-4'></img>
+              <li>Transfer to the BTS Skytrain and take it to On Nut Station.</li>
+              <li>After arriving at On Nut Station, take the Exit 3 and follow the signs to Avani Sukhumvit Bangkok.</li>
+              <img src={btsexitURL} class='place-content-center md:w-1/2 h-auto mx-auto mt-4 mb-4'></img>
+          </ul>
+          <h3 class='mt-3'>
+              Note: There's also an App that tells you how to get from station A to station B with estimate time and cost
+          </h3>
+          <div class='flex items-center'>
+              <a href={bkkRailAndroid} class='text-blue-500'>
+              <img src={androidDownloadButton} class='h-[60px]'></img>
+              </a>
+              |
+              <a href={bkkRailiOS} class='text-blue-500'>
+              <img src={iOSDownloadBadge} class='p-2 h-[60px]'></img>
+              </a>
+          </div>
+      </div>
+      <div id='parkingAvani' class='mt-4 mb-4 space-y-2 scroll-mt-14'>
+          <h3 class='font-bold text-md text-primary'> Driving and Parking </h3>
+          <p> Parking at Avani Sukhumvit is free all day for guests. </p>
+          <p>
+              <a href={directionURL} class='text-blue-500'>
+              Google Map Direction
+              </a>
+          </p>
+      </div>
+      <div id='grabAvani' class='mt-4 mb-4 space-y-2 scroll-mt-14'>
+          <h3 class='font-bold text-md text-primary'> Grab (Uber) / Taxi </h3>
+          <p>
+              To travel in Bangkok by car or motorcycle, we recommend using Grab (Uber). Grab is a ride-hailing app that
+              is widely used in Thailand and is a convenient and reliable way to get around it’s allowed you to track your
+              fares and journey. You can also order food via Grab.
+          </p>
+          <ul class='list-disc list-inside mb-4 mt-4 space-y-4'>
+              <li>Tell the driver to go to <strong>Avani Sukhumvit Bangkok Hotel.</strong></li>
+              <li>The ride should take around 30 minutes to 1 hour from Suvarnabhumi Airport.</li>
+              <li>The ride should take around 30 to 45 minutes from the city center.</li>
+          </ul>
+          <div class='flex items-center'>
+              <a href={grabAndroidURL} class='text-blue-500'>
+              <img src={androidDownloadButton} class='h-[60px]'></img>
+              </a>
+              |
+              <a href={grabIosURL} class='text-blue-500'>
+              <img src={iOSDownloadBadge} class='p-2 h-[60px]'></img>
+              </a>
+          </div>
+      </div>
+      <div id='airportAvani' class='mt-4 mb-4 space-y-2 scroll-mt-14'>
+          <h3 class='font-bold text-md mb-2 text-primary'> Airport </h3>
+          <p>
+              Bangkok is served by two airports, Suvarnabhumi Airport and Don Mueang International Airport. Both airports
+              offer various transportation options to get to the venue.
+          </p>
+          <h3 class='font-bold text-md mt-2 mb-2 text-primary'> Suvarnabhumi Airport </h3>
+          <p>
+              To get to the venue from Suvarnabhumi Airport, we reccommend using Grab or taking Airport Rail Link Skytrain
+              (ARL Red Line).
+          </p>
+          <ul class='list-decimal list-inside mt-4 mb-4 space-y-2'>
+              <li>
+              Go down to the basement level and get the Airport Rail Link (ARL) Skytrain to BTS Skytrain Phaya Thai
+              Station (45 baht, terminal station).
+              </li>
+              <img src={arlticketURL} class='place-content-center md:w-1/2 h-auto mx-auto mb-4 mt-4'></img>
+              <li> The whole journey takes about 90 minutes. Trains stop running at midnight. </li>
+              <li>
+              After arriving and tranfer to the Phaya Thai BTS Skytrain, you can take the same line of BTS to get to
+              venue to On Nut Station. see
+              <a href='#btsAvani' class='text-blue-500 mx-2'>
+                  BTS Skytrain Guide
+              </a>
+              for details
+              </li>
+          </ul>
+          <h3 class='font-bold text-md mb-4 text-primary'> Don Mueng Airport </h3>
+          <p class='mb-2'>
+              If you're taking a domestic or regional flight, you may be coming from Don Mueang airport. To get to the
+              venue, we reccommend using Grab or taking Airport Link Skytrain (Dark Red Line).
+          </p>
+          <p>
+              Don Mueang Airport is also connected to the Airport Link Skytrain (Dark Red Line) but the train from Don
+              Mueang airport is connected to MTR Subway not BTS Skytrain
+          </p>
+          <ul class='list-decimal list-inside mt-4 mb-4 '>
+              <li>
+              To get to the station, follow the signs to SRT Red Line. It is not referred to as “Airport Train” on the
+              signs.
+              </li>
+              <img src={dmksignURL} class='place-content-center md:w-1/2 h-auto mx-auto mb-4 mt-4'></img>
+              <li>
+              There is a step-free walkway that connects the airport to the station on the other side of a massive
+              highway.
+              </li>
+              <img src={dmkwayURL} class='place-content-center md:w-1/2 h-auto mx-auto mb-4 mt-4'></img>
+              <li>
+              At the station, you are presented with two options; Long Distance and Commuter. For trains to Bangkok, you
+              need the commuter.
+              </li>
+              <img src={dmkcommuURL} class='place-content-center md:w-1/2 h-auto mx-auto mb-4 mt-4'></img>
+              <li>
+              The Commuter Line is operated by the State Railways of Thailand. Tickets are in the form of a token. You
+              need to buy ticket to Bang Sue Grand Station.
+              </li>
+              <img src={dmkdarkredURL} class='place-content-center md:w-1/2 h-auto mx-auto mb-4 mt-4'></img>
+              <li>
+              After arriving at Bang Sue Grand Station, there are signs at the Commuter Line exits that direct you to
+              the MRT Blue Line under the station then you have to take the MRT to venue, see
+              <a href='#mrtAvani' class='text-blue-500 mx-2'>
+                  MRT Subway Guide
+              </a>
+              for details
+              </li>
+          </ul>
+      </div>
+      <div id='toMicrosoft' class='mt-4 mb-4 space-y-2 scroll-mt-14'>
+          <p class='font-bold text-lg mb-2 text-primary'>Getting to Microsoft Thailand</p>
+          <div id='btsMicrosoft' class='mt-4 mb-4 space-y-2 scroll-mt-14'>
+              <h3 class='font-bold text-md mb-2 text-primary'> BTS Skytrain </h3>
+              <p>Taking BTS Skytrain is the fastest and easiest way to get to the venue.</p>
+              <ul class='list-decimal list-inside mb-4 mt-4 space-y-4'>
+                  <li>Take the BTS Skytrain to the Phloen Chit station. Exit the station via Exit 2</li>
+                  <img src={btsMicrosoft} class='place-content-center md:w-1/2 h-auto mx-auto mb-4 mt-4'></img>
+                  <li>Walk 650 m. (8 minutes) or wait for the shuttle bus at the bus stop (Circular pick up and drop off every 15 minutes)</li>
+                  <img src={shuttleBus} class='place-content-center md:w-1/2 h-auto mx-auto mb-4 mt-4'></img>
+              </ul>
+          </div>
+          <div id='parkingMicrosoft' class='mt-4 mb-4 space-y-2 scroll-mt-14'>
+              <h3 class='font-bold text-md mb-2 text-primary'> Driving and Parking </h3>
+              <p>Taking BTS Skytrain is the fastest and easiest way to get to the venue.</p>
+              <ul class='list-decimal list-inside mb-4 mt-4 space-y-4'>
+                  <li>
+                      <strong>All Seasons Place</strong> is situated on the same side of Wireless Road as The Athenee Hotel.
+                      <ul class='list-disc list-inside mb-4 mt-4 space-y-4 ml-4'>
+                          <li>There are entrances on both <strong>Wireless Road</strong> and <strong>Soi Ruamrudee</strong>.</li>
+                          <li>From Phloen Chit Road, turn left onto Wireless Road. Continue approximately 550 m. and All Seasons Place will be on your left.</li>
+                      </ul>
+                  </li>
+                  <li>
+                      Parking is available on levels B1 and B2, with <strong>Green Pillars</strong> marking the designated spots for CRC Tower.
+                      <ul class='list-disc list-inside mb-4 mt-4 space-y-4 ml-4'>
+                          <li>Parking on level B1 is only available after 8:45 AM.</li>
+                          <li>Prior to that time, parking is only available on level B2.</li>
+                      </ul>
+                  </li>
+                  <li>
+                      The parking system operates on an <strong>automatic license plate recognition system</strong> and does not issue parking cards.
+                      <ul class='list-disc list-inside mb-4 mt-4 space-y-4 ml-4'>
+                          <li>Parking is limited.</li>
+                          <li>Free parking for PyCon attendees. Please provide your vehicle's license plate number to Microsoft team to receive a digital parking voucher.</li>
+                      </ul>
+                  </li>
+              </ul>
+          </div>
+          <div id='grabMicrosoft' class='mt-4 mb-4 space-y-2 scroll-mt-14'>
+          <h3 class='font-bold text-md text-primary'> Grab (Uber) / Taxi </h3>
+          <ul class='list-disc list-inside mb-4 mt-4 space-y-4'>
+              <li>Tell the driver to go to <strong>All Seasons Place on Wireless Road.</strong></li>
+              <li>The ride should take around 45 minutes to 1 hour 30 minutes from Suvarnabhumi Airport.</li>
+              <li>The ride should take around 30 minutes from the city center</li>
+          </ul>
+          <div class='flex items-center'>
+              <a href={grabAndroidURL} class='text-blue-500'>
+              <img src={androidDownloadButton} class='h-[60px]'></img>
+              </a>
+              |
+              <a href={grabIosURL} class='text-blue-500'>
+              <img src={iOSDownloadBadge} class='p-2 h-[60px]'></img>
+              </a>
+          </div>
+      </div>
+      </div>
+  </div>
+</div>
+</Layout>

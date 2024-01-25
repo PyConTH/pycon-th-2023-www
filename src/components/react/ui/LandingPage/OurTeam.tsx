@@ -1,6 +1,6 @@
 import type { Teams } from "@assets/team";
 import { teams } from "@assets/team";
-import { Icon } from "astro-iconify";
+import { Icon } from "@iconify/react";
 
 const TeamList = ({ team, color }: { team: Teams; color: string }) => {
   const displaySocial = () => {

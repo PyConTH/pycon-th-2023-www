@@ -1,4 +1,3 @@
-import { Icon } from 'astro-iconify'
 import AnimatedHeadLine from './AnimatedHeadline'
 import AnimatedHeroSvgBottom from './AnimatedHeroSvg/AnimatedHeroSvgBottom'
 import AnimatedHeroSvgSideStar from './AnimatedHeroSvg/AnimatedHeroSvgSideStar'
@@ -14,7 +13,7 @@ const Hero = () => {
   return (
     // media query mobile 100dvh
     // media query desktop 80dvh
-    <div className='grid grid-cols-1 md:grid-cols-5 h-[85vh] sm:mb-10 md:mb-20 lg:mb-80'>
+    <div className='grid grid-cols-1 md:grid-cols-5 min-h-[40vh]'>
       <div className='md:col-span-4 col-span-full relative flex flex-col justify-between'>
         <div className='lg:pl-16 px-4 h-full flex flex-col justify-center'>
           <div className='flex flex-wrap flex-col pb-2'>

@@ -1,4 +1,4 @@
-import { Icon } from "astro-iconify";
+import { Icon } from "@iconify/react";
 import Heading2 from "./Heading2";
 import { useRef, useState } from "react";
 

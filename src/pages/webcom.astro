@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Counter Web Component with Shared State</title>
+  </head>
+  <body>
+    <!-- Include the custom elements -->
+    <counter-element></counter-element>
+    <counter-element></counter-element>
+
+    <script>
+        const openMobileNav = false
+        let count = 0
+
+        class MenuWrapper extends HTMLElement {
+          constructor() {
+            super()
+
+            const button = this.querySelector('button')
+
+
+            button.addEventListener('click', () => {
+              // count++
+              window.dispatchEvent(new CustomEvent('menu-click', { detail: { count: count++ }, composed: true }))
+            })
+
+            window.addEventListener('menu-click', (e) => {
+              button.textContent = `Clicked ${e.detail.count} times`
+            })
+          }
+        }
+
+      customElements.define('menu-button', MenuButton)
+      </script>
+
+    <script>
+      // Shared state object
+      const sharedState = {
+        counterValue: 0,
+      }
+
+      // Define the IncrementButton class
+      class IncrementButton extends HTMLElement {
+        constructor() {
+          super()
+          this.attachShadow({ mode: 'open' })
+          this.shadowRoot.innerHTML = `
+          <button id="increment">+</button>
+        `
+          this.shadowRoot
+            .querySelector('#increment')
+            .addEventListener('click', () => this.dispatchEvent(new Event('increment')))
+        }
+      }
+
+      // Define the DecrementButton class
+      class DecrementButton extends HTMLElement {
+        constructor() {
+          super()
+          this.attachShadow({ mode: 'open' })
+          this.shadowRoot.innerHTML = `
+          <button id="decrement">-</button>
+        `
+          this.shadowRoot
+            .querySelector('#decrement')
+            .addEventListener('click', () => this.dispatchEvent(new Event('decrement')))
+        }
+      }
+
+      // Define the CounterElement class
+      class CounterElement extends HTMLElement {
+        constructor() {
+          super()
+          this.attachShadow({ mode: 'open' })
+          this.shadowRoot.innerHTML = `
+          <style>
+            /* Add your component's CSS styles here */
+          </style>
+          <div>
+            <decrement-button></decrement-button>
+            <span>${sharedState.counterValue}</span>
+            <increment-button></increment-button>
+          </div>
+        `
+
+          this.incrementButton = this.shadowRoot.querySelector('increment-button')
+          this.decrementButton = this.shadowRoot.querySelector('decrement-button')
+          this.countSpan = this.shadowRoot.querySelector('span')
+
+          this.incrementButton.addEventListener('increment', () => this.increment())
+          this.decrementButton.addEventListener('decrement', () => this.decrement())
+
+          // Update the displayed count when shared state changes
+          const updateCount = () => {
+            this.countSpan.textContent = sharedState.counterValue
+          }
+
+          // Listen for changes in shared state
+          window.addEventListener('sharedStateChange', updateCount)
+        }
+
+        increment() {
+          sharedState.counterValue++
+          // Dispatch a shared state change event
+          window.dispatchEvent(new Event('sharedStateChange'))
+        }
+
+        decrement() {
+          sharedState.counterValue--
+          // Dispatch a shared state change event
+          window.dispatchEvent(new Event('sharedStateChange'))
+        }
+      }
+
+      customElements.define('increment-button', IncrementButton)
+      customElements.define('decrement-button', DecrementButton)
+      customElements.define('counter-element', CounterElement)
+    </script>
+  </body>
+</html>

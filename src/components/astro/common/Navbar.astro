@@ -1,0 +1,116 @@
+---
+import { Icon } from 'astro-icon/components'
+
+type MenuType = {
+  name: string
+  hrefLink?: string
+  link?: string
+  subMenu?: MenuType[]
+}
+
+const menus: MenuType[] = [
+  {
+    name: 'About',
+    subMenu: [
+      {
+        name: 'Code of conduct',
+        link: '/conduct',
+      },
+    ],
+  },
+  {
+    name: 'Program',
+    hrefLink: '/#program',
+  },
+  {
+    name: 'Schedule',
+    link: '/schedule',
+  },
+  {
+    name: 'Venue',
+    link: '/venue',
+  },
+  {
+    name: 'Sponsor',
+    hrefLink: '/#sponsor',
+  },
+  {
+    name: 'Speakers',
+    hrefLink: '/speakers',
+  },
+  {
+    name: 'Previous',
+    subMenu: [
+      {
+        name: 'PyCon Thailand 2021',
+        hrefLink: 'https://2021.th.pycon.org/',
+      },
+      {
+        name: 'PyCon Thailand 2019',
+        hrefLink: 'https://2019.th.pycon.org/',
+      },
+      {
+        name: 'PyCon Thailand 2018',
+        hrefLink: 'https://2019.th.pycon.org/pycon2018/',
+      },
+    ],
+  },
+]
+
+
+// export function hamburgerBtnClick() {
+//   console.log('isMenuOpen', isMenuOpen)
+//   toggleMenuState()
+//   const menu = document.getElementById('menu')
+//   if (isMenuOpen) {
+//     menu.classList.remove('hidden')
+//   } else {
+//     menu.classList.add('hidden')
+//   }
+// }
+---
+<script is:inline>
+  let isMenuOpen = false
+
+  function toggleMenuState() {
+    isMenuOpen = !isMenuOpen
+    console.log('isMenuOpen', isMenuOpen)
+    const hamburgerButtonIcon = document.getElementById('hamburger-button-icon')
+    if (isMenuOpen) {
+      hamburgerButtonIcon.setAttribute('name', 'mdi:close')
+    } else {
+      hamburgerButtonIcon.setAttribute('name', 'mdi:menu')
+    }
+  }
+
+  function hamburgerBtnClick() {
+    toggleMenuState()
+  }
+</script>
+
+<!-- dropdown lg:dropdown-end max-md:dropdown-bottom -->
+<nav class="w-full px-4 xl:px-16 py-10 mx-auto top-0 left-0">
+  <div class='flex justify-between items-center flex-wrap'>
+    <!-- Logo -->
+    <div class='max-md:w-full inline-flex justify-between items-center'>
+      <a href='/'>
+        <img src='/images/common/pyconth2023_logo.svg' alt='PyCon Thailand 2023' class='h-12 inline-block' />
+      </a>
+    </div>
+
+    <div class='inline-block md:hidden'>
+      <div class='flex'>
+        <a href='https://www.eventpop.me/e/15840'>
+          <button class='flex items-center ml-2 bg-primary text-white p-2 w-max'>
+            Buy Ticket <Icon name="ion:ticket-outline"/>
+          </button>
+        </a>
+
+        <!-- Hamburger button -->
+        <button class='flex items-center px-3 py-2' onclick="hamburgerBtnClick()">
+          <!-- <Icon id="hamburger-button-icon" name={ isMenuOpen ? 'mdi:close' : 'mdi:menu'} color='#000' className='w-8 h-8' /> -->
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

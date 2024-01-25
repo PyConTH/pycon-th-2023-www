@@ -1,4 +1,6 @@
 import { useState } from 'react'
+
+import { navigate } from 'astro:transitions/client'
 import { Icon } from '@iconify/react'
 
 type MenuType = {
@@ -58,7 +60,7 @@ const menus: MenuType[] = [
 ]
 
 // Navbar component with good accessibility
-const Navbar = (navigate) => {
+const Navbar = () => {
   const [openMobileNav, setOpenMobileNav] = useState(false)
   const toggleOpenMobileNav = () => setOpenMobileNav(cur => !cur)
 
@@ -117,10 +119,10 @@ const Navbar = (navigate) => {
   return (
     <nav className='w-full px-4 xl:px-16 py-10 mx-auto top-0 left-0'>
       <div className='flex justify-between items-center flex-wrap'>
-        <div className='max-md:w-full inline-flex justify-between items-center'>
+        <div className='max-lg:w-full inline-flex justify-between items-center'>
           <PyConLogo />
 
-          <div className='inline-block md:hidden'>
+          <div className='inline-block lg:hidden'>
             <div className='flex'>
               <a href='https://www.eventpop.me/e/15840'>
                 <button className='flex items-center ml-2 bg-primary text-white p-2 w-max'>
@@ -136,7 +138,7 @@ const Navbar = (navigate) => {
 
         <div
           className={`
-            text-black max-md:hidden flex gap-x-8
+            text-black max-lg:hidden flex gap-x-8
           `}
         >
           {/* Menu render */}
@@ -151,9 +153,9 @@ const Navbar = (navigate) => {
         <div
           className={`
             text-black
-            ${openMobileNav ? 'md:hidden' : 'hidden max-md:py-0 border-b-0'}
+            ${openMobileNav ? 'lg:hidden' : 'hidden max-lg:py-0 border-b-0'}
             border-b-2 border-pyconth-violet-600 transition-all
-            flex flex-col gap-x-8 py-4 gap-y-4 max-md:w-full max-md:items-center
+            flex flex-col gap-x-8 py-4 gap-y-4 max-lg:w-full max-lg:items-center
           `}
         >
           {/* Menu render */}

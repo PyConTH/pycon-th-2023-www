@@ -1,20 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro'
 
-import Hero from '../components/react/ui/LandingPage/Hero'
-import Keynote from '../components/react/ui/LandingPage/Keynote'
-import OurTeam from '../components/react/ui/LandingPage/OurTeam'
-import Sponsors from '../components/react/ui/LandingPage/Sponsors'
+import Hero from '@components/react/ui/LandingPage/Hero'
+import Keynote from '@components/react/ui/LandingPage/Keynote'
+import OurTeam from '@components/react/ui/LandingPage/OurTeam'
+import Sponsors from '@components/astro/section/Sponsors.astro'
 ---
 
 <Layout title='Welcome to TH PyCon'>
   <main>
     <div class='mx-auto w-full'>
       <div class='flex flex-col justify-center'>
-        <Hero client:load />
-        <!-- <Keynote client:load /> -->
-        <!-- <Sponsors client:idle /> -->
-        <!-- <OurTeam client:idle /> -->
+        <Hero client:only />
+        <Keynote client:load />
+        <Sponsors/>
+        <OurTeam client:only />
         <div class='text-slate-500 text-center py-16 bg-slate-200'>
           <p>More content will update soon :)</p>
           <p>And we will keep polishing the website 💅</p>

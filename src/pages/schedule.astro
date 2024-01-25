@@ -1,0 +1,15 @@
+---
+import Layout from '@/layouts/Layout.astro'
+
+import SchedulePage from '@components/react/pages/Schedule.tsx'
+---
+
+<Layout title="PyCon TH 2023 - Schedule">
+  <main>
+    <div class='mx-auto w-full'>
+      <div class='flex flex-col justify-center'>
+        <SchedulePage client:only/>
+      </div>
+    </div>
+  </main>
+</Layout>

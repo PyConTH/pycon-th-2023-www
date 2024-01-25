@@ -1,0 +1,136 @@
+---
+import { Image } from 'astro:assets'
+
+// Community Partners
+
+const creatorsgarten = '/assets/sponsors/Creatorsgarten.svg'
+const bigDataPRG = 'https://ik.imagekit.io/p9bsqmrho/sponsors/BigDataRPG.jpeg'
+const bornToDev = 'https://ik.imagekit.io/p9bsqmrho/sponsors/BorntoDev.png'
+const codesanook = 'https://ik.imagekit.io/p9bsqmrho/sponsors/Codesanook.png'
+const dataTH = 'https://ik.imagekit.io/p9bsqmrho/sponsors/DataTH.png'
+const milsBlog = 'https://ik.imagekit.io/p9bsqmrho/sponsors/MilsBlog.png'
+const openSourceEdu = 'https://ik.imagekit.io/p9bsqmrho/sponsors/OpenSourceEducationandDevelopmentAssociation.png'
+const pyLadis = 'https://ik.imagekit.io/p9bsqmrho/sponsors/PyLadiesBangkok.png'
+const skooldio = 'https://ik.imagekit.io/p9bsqmrho/sponsors/Skooldio.png'
+const sparkTech = 'https://ik.imagekit.io/p9bsqmrho/sponsors/SparkTechThailand.png'
+
+const communities = [
+    bigDataPRG,
+    bornToDev,
+    codesanook,
+    creatorsgarten,
+    dataTH,
+    milsBlog,
+    openSourceEdu,
+    pyLadis,
+    skooldio,
+    sparkTech,
+  ]
+---
+
+<div id="sponsor" class='flex flex-col items-center'>
+  <h2 class='text-3xl font-semibold mt-20 text-primary'>Sponsors / Partners</h2>
+  <h2 class='text-2xl mt-10 mb-4 text-primary font-semibold'>Headline</h2>
+  <div class='card w-56 bg-base-100 shadow-xl'>
+    <figure>
+      <img src="https://ik.imagekit.io/p9bsqmrho/landing/data-rockie.png" class='items-center' alt='Data Rockie Logo is loading' />
+    </figure>
+    <div class='card-body text-center flex items-center'>
+      <h4 class='card-title text-secondary'>Toy DataRockie</h4>
+    </div>
+  </div>
+
+  <h2 class='text-3xl font-semibold mt-20 text-primary'>Conference & After Party Partner</h2>
+  <div class='card w-60 ml-10 bg-base-100 shadow-xl'>
+    <figure class='p-5'>
+      <img src='/assets/sponsors/ODDS.svg' alt='ODDS Logo' />
+    </figure>
+  </div>
+
+  <h2 class='text-3xl font-semibold mt-20 text-primary'>Python Software Foundation</h2>
+  <div class='card min-w-60 ml-10 bg-base-100 shadow-xl'>
+    <a href='https://www.python.org/psf-landing/'>
+      <figure class='p-5'>
+        <Image src="https://ik.imagekit.io/p9bsqmrho/sponsors/psf.png" class='items-center' alt='PSF Logo is loading' height="84" width="256" />
+      </figure>
+    </a>
+  </div>
+
+  <h2 class='text-2xl mt-10 mb-4 text-primary font-semibold'>Platinum</h2>
+  <div class="flex max-md:flex-col items-center gap-x-4">
+    <div class='card w-56 bg-base-100 shadow-xl'>
+      <figure class='p-5'>
+        <img src="https://ik.imagekit.io/p9bsqmrho/landing/denso-resize.jpg" class='items-center' alt='Denso Logo is loading' />
+      </figure>
+    </div>
+
+    <div class='card w-56 bg-base-100 shadow-xl'>
+      <figure class='p-5 my-4'>
+        <img src="/assets/sponsors/couchbase.svg" alt="Counchbase Logo is loading"/>
+      </figure>
+    </div>
+  </div>
+
+  <h2 class='text-2xl mt-10 mb-4 text-primary font-semibold'>Sliver</h2>
+  <div class='flex max-md:flex-col items-center gap-x-4'>
+    <div class='card w-56 shadow-xl bg-white'>
+      <figure>
+        <img src="/assets/sponsors/earnin.svg" class='items-center' alt='EarnIn Logo is loading' />
+      </figure>
+    </div>
+    <div class='card w-56 shadow-xl bg-white max-md:mt-5'>
+      <figure class='my-9'>
+        <img src="https://ik.imagekit.io/p9bsqmrho/sponsors/eventpop_primary_RGB.png" class='items-center' alt='EventPop Logo is loading' />
+      </figure>
+    </div>
+    <div class='card w-56 shadow-xl bg-white max-md:mt-5'>
+      <figure class='p-5 my-7'>
+        <img src="https://ik.imagekit.io/p9bsqmrho/sponsors/tgt.png" class='items-center' alt='The Gang Technology Logo is loading' />
+      </figure>
+    </div>
+  </div>
+
+  <h2 class='text-2xl mt-10 mb-4 text-primary font-semibold'>Patron</h2>
+
+  <div class='flex max-md:flex-col items-center gap-x-4'>
+    <div class='card w-56 shadow-xl bg-white'>
+      <figure class='p-5 my-4'>
+        <a href='https://www.simplesat.io/?utm_source=pycon&utm_medium=website&utm_campaign=pycon_sponsor_2023' target='_blank'>
+          <img src="https://ik.imagekit.io/p9bsqmrho/landing/simplesat.png" class='items-center' alt='Simplesat Logo is loading' />
+        </a>
+      </figure>
+    </div>
+    <div class='card w-56 shadow-xl bg-white max-md:mt-5'>
+      <div class='text-center p-3'>
+        <p class='card-title text-secondary text-xl'>Piti Champeethong (MongoDB)</p>
+      </div>
+    </div>
+    <div class='card w-56 shadow-xl bg-white max-md:mt-5'>
+      <figure class='p-5 my-4'>
+        <img src="https://ik.imagekit.io/p9bsqmrho/sponsors/Microsoft.png" class='items-center' alt='Microsoft Logo is loading' />
+      </figure>
+    </div>
+    <div class='card w-56 shadow-xl bg-white max-md:mt-5'>
+      <figure class='p-5 my-4'>
+        <img
+          src="/assets/sponsors/ThaiProgrammerAssociation.svg"
+          class='items-center'
+          alt='Thai Programmer Association Logo is loading'
+        />
+      </figure>
+    </div>
+  </div>
+
+  <!-- Community partners -->
+  <h3 class='text-2xl mt-10 mb-4 text-primary font-semibold'>Community Partners</h3>
+  <div class='flex max-md:flex-col items-center gap-x-4'>
+    {communities.map(item => (
+      <div class='card w-32 h-32 justify-center shadow-xl bg-white my-4'>
+        <figure class='p-5'>
+          <img src={item} class='items-center' />
+        </figure>
+      </div>
+    ))}
+  </div>
+
+</div>

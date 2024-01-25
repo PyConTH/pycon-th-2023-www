@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$pyth-blue: #562ccb;
+$pyth-dark-blue: #38219c;
+$pyth-yellow: #ffc438;
+$pyth-dark-yellow: #ff9645;
+$pyth-cyan: #00b6d2;
+$pyth-dark-cyan: #005c80;
+$pyth-green: #00cb83;
+$pyth-dark-green: #00a66c;
+$pyth-orange: #ff5538;
+$pyth-dark-orange: #bd4a2d;
+$pyth-pink: #f688e7;
+$pyth-dark-pink: #d047c5;
+$pyth-bg-light-secondary: #f5f7fb;
+$pyth-header-orange: #ff9934;
+$pyth-dark-blue: #307697;
+$pyth-dark-green: #0fac70;
+$pyth-white: #ffffff;
+
+.color-cyan {
+  color: $pyth-cyan;
+}
+
+.color-green {
+  color: $pyth-green;
+}
+
+.color-dark-yellow {
+  color: $pyth-dark-yellow;
+}
+
+.color-dark-blue {
+  color: $pyth-dark-blue;
+}
+
+.color-dark-green {
+  color: $pyth-dark-green;
+}
+
+.color-white {
+  color: $pyth-white;
+}
+
+.bg-dark-orange {
+  background-color: $pyth-dark-orange;
+}
+
+.bg-blue {
+  background-color: $pyth-blue;
+}
+
+.bg-light-secondary {
+  background-color: $pyth-bg-light-secondary;
+}
+
+.bg-header-orange {
+  background-color: $pyth-header-orange;
+}
+
+.bg-yellow {
+  background-color: $pyth-yellow;
+  border-color: $pyth-yellow;
+}
+
+.bg-pink {
+  background-color: $pyth-dark-pink;
+  border-color: $pyth-dark-pink;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background: #f9fcff;
+  color: black;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.font-code {
+  font-family: monospace;
+}
+
+.venue-menu {
+  margin-top: 0px !important;
+}
+
+.unreset {
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: black;
+    margin-block-start: 0.83em;
+  }
+
+  h2 {
+    display: block;
+    font-size: 1.5em;
+    color: black;
+    margin-block-start: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+  }
+
+  ul {
+    display: block;
+    color: black;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+  }
+
+  a {
+    color: blue;
+    text-decoration: underline;
+  }
+
+  ol {
+    color: black;
+    list-style-type: decimal;
+    margin-block-start: 1em;
+    padding-inline-start: 40px;
+  }
+
+  p {
+    color: black;
+  }
+
+  p::before {
+    content: '\A';
+    white-space: pre-wrap;
+  }
+}
+
+.CookieConsent {
+  @apply bg-gray-200 text-gray-800 fixed bottom-0 left-1/2 transform -translate-x-1/2 flex flex-wrap justify-between items-baseline py-4 mb-4;
+  z-index: 999;
+  width: 95%;
+  border-radius: 5px;
+
+  span {
+    margin-left: 15px;
+  }
+
+  button#rcc-confirm-button {
+    @apply rounded-md bg-persian-blue-500 text-white border-0 shadow-none cursor-pointer flex-shrink-0 px-6 py-2;
+    margin-right: 15px;
+  }
+}
+
+.banana-animation {
+  animation: banana 1s infinite;
+}
+
+@keyframes banana {
+  0% {
+    transform: translateY(0em);
+  }
+
+  50% {
+    transform: translateY(0.4em);
+  }
+
+  100% {
+    transform: translateY(0em);
+  }
+}
+
+.banana-in-animation {
+  animation: banana-in 0.5s;
+  animation-fill-mode: both;
+}
+
+@keyframes banana-in {
+  from {
+    transform: translateY(100em);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(0em);
+    opacity: 0.75;
+  }
+}

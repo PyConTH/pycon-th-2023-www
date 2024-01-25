@@ -1,9 +1,10 @@
 ---
-import { navigate } from 'astro:transitions/client';
+import NavbarReact from "src/components/react/ui/Navbar";
+// import Navbar from '@components/astro/common/Navbar.astro'
+import Footer from "@components/Footer.astro";
+import CookieConsentBanner from "@components/react/misc/CookieConsentBanner";
 
-import Navbar from "src/components/react/ui/Navbar";
-import Footer from "../components/Footer.astro";
-import CookieConsentBanner from "../components/react/misc/CookieConsentBanner";
+import "@/styles/index.scss"
 
 interface Props {
   title: string;
@@ -19,22 +20,30 @@ const { title } = Astro.props;
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;500;600;700&family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/styles.css" />
+
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
-	<div class="h-screen">
-        <div class="bg-white flex flex-col h-full container mx-auto relative">
-          <!-- {!props.hideNavbar && <Navbar />} -->
-          <Navbar navigate={navigate} client:load />
-          <div class='flex-1 flex'><slot /></div>
-          <div class="mt-4">
-            <Footer />
-          </div>
-          <CookieConsentBanner client:idle />
+    <div class="h-screen">
+      <div class="bg-white flex flex-col h-full container mx-auto relative">
+        <!-- {!props.hideNavbar && <Navbar />} -->
+        <NavbarReact client:load />
+        <!-- <Navbar/> -->
+
+        <div class=''><slot /></div>
+        <div class="mt-4">
+          <Footer />
         </div>
+        <CookieConsentBanner client:idle />
       </div>
-    
+    </div>
   </body>
 </html>
 <style is:global></style>
