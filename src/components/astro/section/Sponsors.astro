@@ -123,9 +123,9 @@ const communities: {imgUrl: string, alt: string }[] = [
 
   <!-- Community partners -->
   <h3 class='text-2xl mt-10 mb-4 text-primary font-semibold'>Community Partners</h3>
-  <div class='flex max-md:flex-col items-center gap-x-4'>
-    {communities.map(item => (
-      <div class='card w-32 h-32 justify-center shadow-xl bg-white my-4'>
+  <div class='flex flex-wrap items-center gap-x-4 justify-center'>
+    {communities.map((item, index) => (
+      <div class={`card w-32 h-32 justify-center shadow-xl bg-white my-4`}>
         <figure class='p-5'>
           <img src={item.imgUrl} class='items-center' alt={item.alt}/>
         </figure>
