@@ -37,6 +37,7 @@ const WAITING_TIME = 3000
 let LAST_INDEX_PLAYLIST = -1
 
 const AnimatedHeadLine = () => {
+  const [isLoad, setIsLoad] = useState(false)
   const [isAnimating, setIsAnimating] = useState(false)
   const [text, setText] = useState('')
   const [index, setIndex] = useState(0)
@@ -103,9 +104,14 @@ const AnimatedHeadLine = () => {
     setHeadLinePlaylistIndex(nextPlaylistIndex)
   }, [headLinePlaylist.length, headLinePlaylistIndex])
 
+  // Start
+  useEffect(() => {
+    setIsLoad(true)
+  }, [])
+
   // Initiate headline playlist
   useEffect(() => {
-    if (isEndOfRound) {
+    if (isLoad && isEndOfRound) {
       // Setup playlist
       // Will setup sequence of headline
       const playlist = createHeadlinePlaylist()
@@ -113,7 +119,7 @@ const AnimatedHeadLine = () => {
       LAST_INDEX_PLAYLIST =playlist[playlist.length - 1]
       return
     }
-  }, [isEndOfRound, createHeadlinePlaylist])
+  }, [isLoad, isEndOfRound, createHeadlinePlaylist])
 
   // Animation
   const animate = useCallback(() => {
@@ -245,7 +251,7 @@ const AnimatedHeadLine = () => {
           }
         }}
       >
-        <Highlight innerHTML={false} className="python whitespace-pre-wrap text-3xl max-md:text-3xl !w-fit !bg-transparent font-montserrat !px-0">
+        <Highlight innerHTML={false} className="python whitespace-pre-wrap text-3xl max-md:text-3xl !w-fit !bg-transparent !px-0">
             {text + '_'}
         </Highlight>
         <div className="flex-1 flex">
