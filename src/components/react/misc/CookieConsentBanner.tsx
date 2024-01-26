@@ -54,16 +54,14 @@ export default function CookieConsentBanner() {
             contentClasses={`flex items-center`}
             onAccept={onCookieConsentAccept}
           >
-            {
-              isLoad && (
-                <span className='mr-2'>
-                  <span className='mr-2'>🍪</span>This website uses cookies to enhance the user experience.
-                  <div className='cursor-pointer lg:ml-6 text-primary' onClick={() => setShowModal(true)}>
-                    Click here to learn more
-                  </div>
-                </span>
-              )
-            }
+            <div className='mr-2'>
+              <p>
+                <span className='mr-2'>🍪</span>This website uses cookies to enhance the user experience.
+              </p>
+              <p className='cursor-pointer lg:ml-6 text-primary' onClick={() => setShowModal(true)}>
+                Click here to learn more
+              </p>
+            </div>
           </CookieConsent>
         )
       }
