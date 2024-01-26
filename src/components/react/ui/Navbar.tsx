@@ -138,7 +138,7 @@ const Navbar = () => {
 
         <div
           className={`
-            text-black max-lg:hidden flex gap-x-8
+            text-black max-lg:hidden flex gap-x-8 items-center
           `}
         >
           {/* Menu render */}
