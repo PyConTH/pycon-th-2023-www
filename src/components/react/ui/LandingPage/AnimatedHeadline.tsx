@@ -20,7 +20,7 @@ const HEADLINE: Array<HeadLine> = [
   { message: 'CHIPI CHIPI CHAPA CHAPA DUBI DUBI DABA DABA', iconName: 'fluent-emoji:cat-face', iconAnimation: 'animate-bounce', iconColor: '#faa', iconAnimationDuration: '1s', bounce: true, link: 'https://www.youtube.com/embed/wh9QLjk3M2k?si=4unUv3bo7vsV1f5-&autoplay=1' },
   { message: 'from around_the_world import Python_Developer', iconName: 'bi:keyboard-fill', iconAnimation: 'animate-spin', iconColor: '#aaa', iconAnimationDuration: '15s' },
   { message: 'We wish you a happy new year.', iconName: 'solar:heart-bold', iconAnimation: 'animate-pulse', iconColor: '#faa', iconAnimationDuration: '1s', bounce: false },
-  { message: 'See you again in Q1/2025', iconName: 'openmoji:motor-boat', iconAnimation: 'animate-bounce', iconColor: '#aaa', iconAnimationDuration: '1s', bounce: false },
+  { message: 'See you again in Q4/2025', iconName: 'openmoji:motor-boat', iconAnimation: 'animate-bounce', iconColor: '#aaa', iconAnimationDuration: '1s', bounce: false },
 ]
 
 const today = new Date()
