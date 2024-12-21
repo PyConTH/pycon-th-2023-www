@@ -180,7 +180,7 @@ export default function Keynote() {
   return (
     <div
       id="program"
-      className="flex flex-col text-black bg-slate-100 px-16 py-8"
+      className="flex flex-col text-black bg-slate-100 px-8 md:px-16 py-8"
     >
       <Heading2 title="Keynotes" />
 
