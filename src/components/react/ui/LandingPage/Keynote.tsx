@@ -101,7 +101,7 @@ const KeynoteSpeaker = ({
           className="max-xl:h-32 max-xl:w-32 h-42 w-42 mx-auto rounded-full rounded-br-none overflow-hidden p-1"
           style={{ background: color }}
         >
-          <div className="h-full w-full mx-auto rounded-full rounded-br-none overflow-hidden">
+          <div className="aspect-square mx-auto rounded-full rounded-br-none overflow-hidden">
             <img
               className="w-full"
               width={200}
